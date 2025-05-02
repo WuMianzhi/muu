@@ -5,6 +5,14 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  background-color: #eef3fa;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all ease-in-out .36s;
 }
 
 a,

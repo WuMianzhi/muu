@@ -1,20 +1,44 @@
 <script setup>
+import { ref } from 'vue';
+import BaseButton from './base/BaseButton.vue';
+import BaseColorProgressBar from './base/BaseColorProgressBar.vue';
+import BaseFlowerButton from './base/BaseFlowerButton.vue';
+import BaseprogressPills from './base/BaseProgressPills.vue';
+import ColorBar from './base/ColorBar.vue';
+import PageButton from './base/PageButton.vue';
+import NeumorphicSwitch from './base/NeumorphicSwitch.vue';
+import AxisControlPad from './base/AxisControlPad.vue';
+import NumPicker from './compose/NumPicker.vue'
+
+
 defineProps({
   msg: {
     type: String,
     required: true,
   },
 })
+
+const flowerActive = ref(false)
+const handleClick = () => {
+  flowerActive.value = !flowerActive.value
+}
+
+const switchVal = ref(false)
+
+
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+    <BaseButton />
+    <PageButton />
+    <ColorBar />
+    <BaseprogressPills />
+    <BaseColorProgressBar />
+    <BaseFlowerButton :active="flowerActive" @click="handleClick" />
+    <NeumorphicSwitch v-model:checked="switchVal" />
+    <AxisControlPad />
+    <NumPicker />
   </div>
 </template>
 
@@ -36,6 +60,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
