@@ -37,22 +37,27 @@ function getColor(index) {
 <style scoped>
 .progress-container {
     display: flex;
-    gap: 4px;
+    gap: 3px;
     justify-content: center;
     align-items: end;
 }
 
 .pill {
+    box-sizing: content-box;
     width: 6px;
-    height: 12px;
+    height: 16px;
     border-radius: 10px;
     background: #eee;
-    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff;
+    box-shadow: inset 1px 1px 2px rgba(138, 143, 151, 0.5),
+        inset -1px -1px 2px rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
+    border: rgba(232, 233, 235, 0.6) 1px solid;
 }
 
 .pill.active {
-    transform: translateY(-6px);
-    box-shadow: inset 1px 1px 2px #d1d9e6, inset -1px -1px 2px #ffffff;
+    transform: translateY(-12px);
+    box-shadow: none;
+    box-shadow: inset 1px 1px 2px rgba(240, 240, 240, 0.5),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 </style>

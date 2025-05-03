@@ -6,7 +6,7 @@ import BaseFlowerButton from './base/BaseFlowerButton.vue';
 import BaseprogressPills from './base/BaseProgressPills.vue';
 import ColorBar from './base/ColorBar.vue';
 import PageButton from './base/PageButton.vue';
-import NeumorphicSwitch from './base/NeumorphicSwitch.vue';
+import NeumorphicSwitch from './base/BaseSwitch.vue';
 import AxisControlPad from './base/AxisControlPad.vue';
 import NumPicker from './compose/NumPicker.vue'
 

@@ -39,10 +39,9 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.base-button:hover {
+/* .base-button:hover {
   background: linear-gradient(to right, #a18cd1, #fbc2eb);
-}
+} */
 </style>

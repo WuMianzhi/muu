@@ -1,18 +1,18 @@
 import Index from '@/views/Index.vue'
 import GenderIdentity from '@/views/GenderIdentity.vue'
 import GenderExpression from '@/views/GenderExpression.vue'
-import GenderAttractions from '@/views/GenderAttractions.vue'
-import InitimateRelationshipsAttractions from '@/views/InitimateRelationshipsAttractions.vue'
-import PhysiologicalAttractions from '@/views/PhysiologicalAttractions.vue'
-import PhysiologicalTraits from '@/views/PhysiologicalTraits.vue'
-import SexulaOrientation from '@/views/SexulaOrientation.vue'
+import GenderAttractions from '@/views/GenderAttraction.vue'
+import IntimateRelationshipsAttraction from '@/views/IntimateAttraction.vue'
+import PhysicalAttraction from '@/views/PhysicalAttraction.vue'
+import PhysiologicalTrait from '@/views/PhysiologicalTrait.vue'
+import SexualOrientation from '@/views/SexualOrientation.vue'
 
 export const routes = [
     { path: '/', component: Index },
     { path: '/gender-identity', component: GenderIdentity },
     { path: '/gender-expression', component: GenderExpression },
-    { path: '/physiological-traits', component: PhysiologicalTraits },
-    { path: '/sexula-orientation', component: SexulaOrientation },
-    { path: '/physiological-attractions', component: PhysiologicalAttractions },
-    { path: '/initimate-relationships-attraction', component: InitimateRelationshipsAttractions },
+    { path: '/physical-traits', component: PhysiologicalTrait },
+    { path: '/sexual-orientation', component: SexualOrientation },
+    { path: '/physical-attraction', component: PhysicalAttraction },
+    { path: '/intimate-attraction', component: IntimateRelationshipsAttraction },
 ]

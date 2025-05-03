@@ -4,7 +4,7 @@
             <img src="../../assets/minus.svg" class="btn-symbol"></img>
         </BaseButton>
         <div class="center">
-            <BaseProgressPills v-model:active-index="acKey" />
+            <BaseProgressPills :active-index="val" :end-color="endColor" :start-color="startColor" />
             <h3> {{ title }}</h3>
         </div>
         <BaseButton @click="addAcKey">
@@ -14,43 +14,47 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import BaseButton from '../base/BaseButton.vue';
 import BaseProgressPills from '../base/BaseProgressPills.vue';
 
 const props = defineProps({
     startColor: { type: Array, default: [173, 255, 47] },
     endColor: { type: Array, default: [0, 191, 255] },
-    title: { type: String, default: 'test' }
+    title: { type: String, default: 'test' },
+    val: { type: Number, default: 10 }
 })
 
-const acKey = ref(0)
+const emits = defineEmits([
+    'update:val'
+])
 
 const addAcKey = () => {
-    acKey.value > 19 ? acKey.value = 20 : acKey.value++
+    emits('update:val', props.val > 19 ? 20 : props.val + 1)
+
 }
 
 const minAcKey = () => {
-    acKey.value < 1 ? acKey.value = 0 : acKey.value--
+    emits('update:val', props.val < 1 ? 0 : props.val - 1)
 }
-
-
 
 </script>
 
 
 <style lang="css" scoped>
 .wrapper {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     gap: .5rem;
+    margin: 1rem 0;
 }
 
 .center {
-    text-align: center;
-    transform: translateY(.5rem);
+    /* text-align: center; */
+    transform: translateY(.25rem);
 }
 
-.btn-symbol{
+.btn-symbol {
     width: .75rem;
 }
 </style>
