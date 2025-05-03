@@ -35,7 +35,6 @@
 import NumPicker from "@/components/compose/NumPicker.vue";
 import BaseFlowerButton from "@/components/base/BaseFlowerButton.vue";
 import { useQuizStore } from "@/stores/quizStore";
-import { computed } from "vue";
 
 const quizStore = useQuizStore();
 

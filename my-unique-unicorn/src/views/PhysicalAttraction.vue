@@ -2,11 +2,11 @@
   <div>
     <h1>生理上被怎样的人吸引</h1>
 
-    <div class="quiz-content">
-      <BaseSwitch v-model:checked="quizStore.genderQuiz.isPhysicalAttract" />
-      <template
-        v-for="(quiz, idx) in quizStore.genderQuiz.physicalAttract"
-      >
+    <div>
+      <div class="switcher-container">
+        <BaseSwitch v-model:checked="quizStore.genderQuiz.isPhysicalAttract" />
+      </div>
+      <template v-for="(quiz, idx) in quizStore.genderQuiz.physicalAttract">
         <NumPicker
           :title="quiz.name"
           v-model:val="quiz.val"
@@ -24,4 +24,9 @@ import { useQuizStore } from "@/stores/quizStore";
 
 const quizStore = useQuizStore();
 </script>
-<style lang=""></style>
+<style scoped>
+.switcher-container{
+  display: flex;
+  justify-content: center;
+}
+</style>

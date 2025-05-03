@@ -2,5 +2,5 @@
     <!-- <h1>Welcome</h1> -->
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 </script>

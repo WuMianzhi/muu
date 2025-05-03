@@ -155,6 +155,31 @@ export const useQuizStore = defineStore("quiz", {
         },
       ],
       isIntimateAttract: true,
+      physicalTrail: [
+        {
+          name: "雌激素",
+          val: 10,
+          startColor: [235, 135, 134],
+          endColor: [239, 198, 157],
+          img: "../../assets/img/androgens.svg",
+        },
+        {
+          name: "雄激素/睾酮",
+          val: 10,
+          startColor: [243, 206, 160],
+          endColor: [241, 235, 138],
+          img: "../../assets/img/androgens.svg",
+        },
+        {
+          name: "孕激素",
+          val: 10,
+          startColor: [243, 240, 136],
+          endColor: [195, 241, 166],
+          img: "../../assets/img/androgens.svg",
+        },
+      ],
+      physicalTrailPercent: 50,
+      chromosome: "xy",
     },
   }),
   actions: {

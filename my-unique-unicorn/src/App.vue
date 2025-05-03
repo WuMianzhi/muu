@@ -107,6 +107,21 @@ footer {
   border-radius: 1rem;
   transition: all ease-in-out 0.36s;
   overflow: auto;
+  /* background: linear-gradient(
+      123.84deg,
+      rgba(229, 229, 229, 0.2) 0.32%,
+      rgba(205, 213, 224, 0.2) 32.08%,
+      rgba(205, 213, 224, 0.2) 60.87%,
+      rgba(255, 255, 255, 0.2) 95.61%
+    ),
+    linear-gradient(
+      160.61deg,
+      rgba(255, 255, 255, 0.48) 13.02%,
+      rgba(255, 255, 255, 0.4) 55.88%,
+      rgba(255, 255, 255, 0) 99.64%
+    ); */
+
+
 }
 
 .logo {
@@ -124,7 +139,7 @@ footer {
   border-radius: 0.5rem;
 }
 
-.footer{
+.footer {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -136,8 +151,6 @@ footer {
   height: 100%;
   /* width: 100%; */
 }
-
-
 
 .page-control {
   width: 100%;

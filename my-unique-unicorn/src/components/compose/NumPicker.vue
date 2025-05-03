@@ -32,7 +32,6 @@ const emits = defineEmits([
 
 const addAcKey = () => {
     emits('update:val', props.val > 19 ? 20 : props.val + 1)
-
 }
 
 const minAcKey = () => {

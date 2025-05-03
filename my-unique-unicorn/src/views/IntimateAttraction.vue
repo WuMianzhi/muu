@@ -2,10 +2,11 @@
   <div>
     <h1>亲密关系上受到怎样的人吸引</h1>
 
-    <div class="quiz-content">
-      <BaseSwitch
-        v-model:checked="quizStore.genderQuiz.isIntimateAttract"
-      />
+    <div>
+      <div class="switcher-container">
+        <BaseSwitch v-model:checked="quizStore.genderQuiz.isIntimateAttract" />
+      </div>
+
       <template v-for="(quiz, idx) in quizStore.genderQuiz.intimateAttract">
         <NumPicker
           :title="quiz.name"
@@ -18,7 +19,8 @@
   </div>
 </template>
 
-<script setup lang="ts">close
+<script setup lang="ts">
+close;
 import NumPicker from "@/components/compose/NumPicker.vue";
 import BaseSwitch from "@/components/base/BaseSwitch.vue";
 import { useQuizStore } from "@/stores/quizStore";
@@ -26,5 +28,8 @@ import { useQuizStore } from "@/stores/quizStore";
 const quizStore = useQuizStore();
 </script>
 <style scoped>
-
+.switcher-container {
+  display: flex;
+  justify-content: center;
+}
 </style>

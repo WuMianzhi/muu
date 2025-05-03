@@ -1,14 +1,11 @@
 <template>
     <div class="switch-container" @click="toggle">
         <div class="switch-label" :class="{ active: !checked }">{{ checked ? ' 被吸引' : '不被吸引' }}</div>
-
         <div class="switch-knob" :class="{ active: checked }" />
     </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
-
+<script setup lang="ts">
 const props = defineProps({
     checked: { type: Boolean, default: false }
 })
