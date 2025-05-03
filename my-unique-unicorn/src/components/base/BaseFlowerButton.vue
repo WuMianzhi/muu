@@ -29,7 +29,6 @@ function handleClick() {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 150px;
 }
 
 .flower {

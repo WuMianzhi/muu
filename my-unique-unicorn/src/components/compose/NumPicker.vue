@@ -4,7 +4,9 @@
             <img src="../../assets/minus.svg" class="btn-symbol"></img>
         </BaseButton>
         <div class="center">
-            <BaseProgressPills :active-index="val" :end-color="endColor" :start-color="startColor" />
+            <BaseProgressPills :active-index="val"
+            @update:active-index="newVal => emits('update:val', newVal)"
+             :end-color="endColor" :start-color="startColor" />
             <h3> {{ title }}</h3>
         </div>
         <BaseButton @click="addAcKey">

@@ -23,7 +23,7 @@ onMounted(() => {
 
 const findRouteIdx = (route) => {
   console.log(route.path);
-  
+
   if (route.path === "/") {
     isWelcome.value = true;
     return;
@@ -32,7 +32,7 @@ const findRouteIdx = (route) => {
   for (let i = 0; i < routes.length; i++) {
     if (routes[i].path === route.path) {
       pageIdx.value = i - 1;
-      isWelcome.value = false
+      isWelcome.value = false;
       break;
     }
   }
@@ -51,13 +51,11 @@ const goPrevPage = () => {
 
 <template>
   <div class="placeholder" :class="isWelcome ? '' : 'remove'"></div>
-  <header>
-    <div class="wrapper" :class="isWelcome ? 'bigger' : 'color-bg'">
-      <img src="./assets/unicorn.png" />
-    </div>
+  <header :class="isWelcome ? 'bigger' : 'color-bg'">
+    <img class="unicorn-img" src="./assets/unicorn.svg" />
   </header>
 
-  <main :class="isWelcome ? '' : 'content'">
+  <main :class="isWelcome ? '' : 'main-content'">
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
@@ -83,17 +81,37 @@ const goPrevPage = () => {
 
 <style scoped>
 header {
-  line-height: 1.5;
-  flex-shrink: 1;
+  height: 15vh;
+  flex: 1 1 100px;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  flex: 1 1 auto;
+  overflow: auto;
+  height: fit-content;
+  /* height: max-content; */
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.main-content {
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  text-align: center;
+  color: #bcbcbc;
+  border-radius: 1rem;
+  transition: all ease-in-out 0.36s;
+  overflow: auto;
 }
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
-
-.wrapper {
-  height: 100%;
 }
 
 .color-bg {
@@ -106,8 +124,7 @@ header {
   border-radius: 0.5rem;
 }
 
-.footer,
-.wrapper {
+.footer{
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -115,16 +132,18 @@ header {
   justify-content: center;
 }
 
+.unicorn-img {
+  height: 100%;
+  /* width: 100%; */
+}
+
+
+
 .page-control {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.wrapper {
-  width: calc(100vw - 4rem);
-  transition: all ease-in-out 0.36s;
 }
 
 .start-btn {
@@ -174,17 +193,6 @@ header {
   height: 1rem;
 }
 
-.content {
-  height: 60vh;
-  margin: 1rem 0;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 1rem;
-  text-align: center;
-  color: #bcbcbc;
-  border-radius: 1rem;
-  transition: all ease-in-out 0.36s;
-}
-
 .placeholder {
   height: 10rem;
 }
@@ -211,6 +219,6 @@ header {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
-  transform: scale(.68);
+  transform: scale(0.68);
 }
 </style>
