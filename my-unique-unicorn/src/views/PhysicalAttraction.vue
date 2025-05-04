@@ -12,6 +12,7 @@
           v-model:val="quiz.val"
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"
+          :mode="mode"
         />
       </template>
     </div>
@@ -23,6 +24,13 @@ import BaseSwitch from "@/components/base/BaseSwitch.vue";
 import { useQuizStore } from "@/stores/quizStore";
 
 const quizStore = useQuizStore();
+
+defineProps({
+  mode: {
+    type: String,
+    default: "SHOW",
+  },
+});
 </script>
 <style scoped>
 .switcher-container{

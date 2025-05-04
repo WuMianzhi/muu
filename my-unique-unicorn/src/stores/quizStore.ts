@@ -30,7 +30,7 @@ export const useQuizStore = defineStore("quiz", {
           endColor: [138, 233, 239],
         },
         {
-          name: "自定义！",
+          name: "（自定义！）",
           val: 10,
           startColor: [124, 212, 218],
           endColor: [138, 137, 238],
@@ -83,7 +83,7 @@ export const useQuizStore = defineStore("quiz", {
           endColor: [138, 233, 240],
         },
         {
-          name: "（自定义！） ",
+          name: "（自定义！）",
           val: 10,
           startColor: [133, 228, 236],
           endColor: [137, 135, 233],

@@ -9,6 +9,7 @@
           v-model:val="quiz.val"
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"
+          :mode="mode"
         />
       </template>
     </div>
@@ -18,7 +19,10 @@
       <div class="left">
         <BaseFlowerButton
           :active="!quizStore.genderQuiz.assignGenderMale"
-          @click="quizStore.genderQuiz.assignGenderMale = !quizStore.genderQuiz.assignGenderMale"
+          @click="
+            quizStore.genderQuiz.assignGenderMale =
+              !quizStore.genderQuiz.assignGenderMale
+          "
         />
         <h3>女性</h3>
       </div>
@@ -37,7 +41,12 @@ import BaseFlowerButton from "@/components/base/BaseFlowerButton.vue";
 import { useQuizStore } from "@/stores/quizStore";
 
 const quizStore = useQuizStore();
-
+defineProps({
+  mode: {
+    type: String,
+    default: "SHOW",
+  },
+});
 </script>
 <style scoped>
 .assign-gender {

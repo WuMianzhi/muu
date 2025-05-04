@@ -1,15 +1,19 @@
 <template>
     <div class="wrapper">
-        <BaseButton @click="minAcKey">
+        <BaseButton @click="minAcKey" v-if="mode==='SHOW'">
             <img src="../../assets/minus.svg" class="btn-symbol"></img>
         </BaseButton>
+
         <div class="center">
             <BaseProgressPills :active-index="val"
             @update:active-index="newVal => emits('update:val', newVal)"
              :end-color="endColor" :start-color="startColor" />
-            <h3> {{ title }}</h3>
+            <slot>
+                <h3> {{ title }}</h3>
+            </slot>
+        
         </div>
-        <BaseButton @click="addAcKey">
+        <BaseButton @click="addAcKey" v-if="mode==='SHOW'">
             <img src="../../assets/plus.svg" class="btn-symbol"></img>
         </BaseButton>
     </div>
@@ -23,7 +27,8 @@ const props = defineProps({
     startColor: { type: Array, default: [173, 255, 47] },
     endColor: { type: Array, default: [0, 191, 255] },
     title: { type: String, default: 'test' },
-    val: { type: Number, default: 10 }
+    val: { type: Number, default: 10 },
+    mode: {type: String, default: 'SHOW'}
 })
 
 const emits = defineEmits([

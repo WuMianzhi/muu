@@ -33,11 +33,12 @@
 
     <div class="chromosome-container">
       <h3>性染色体</h3>
-      <div class="chromosome-panel">
+      <div class="chromosome-panel" v-if="mode === 'SHOW'">
         <span>X</span>
         <AxisControl v-model:idx="firstIdx" />
         <AxisControl v-model:idx="secondIdx" />
       </div>
+      <h3 v-else>{{ res }}</h3>
     </div>
   </div>
 </template>
@@ -46,12 +47,19 @@ import ColorBar from "@/components/base/ColorBar.vue";
 import ImgNumPicker from "@/components/compose/ImgNumPicker.vue";
 import AxisControl from "@/components/base/AxisControlPad.vue";
 import { useQuizStore } from "@/stores/quizStore";
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 
 const quizStore = useQuizStore();
 
 const firstIdx = ref(0);
 const secondIdx = ref(2);
+
+const res = computed(() => {
+  const chromosomeArray = ["X", "Y", "-"];
+  return `X${chromosomeArray[firstIdx.value]}${
+    secondIdx.value == 2 ? "" : chromosomeArray[secondIdx.value]
+  }`;
+});
 
 watch([firstIdx, secondIdx], () => {
   const chromosomeArray = ["X", "Y", "-"];
@@ -60,6 +68,13 @@ watch([firstIdx, secondIdx], () => {
   }`;
 
   quizStore.genderQuiz.chromosome = res;
+});
+
+defineProps({
+  mode: {
+    type: String,
+    default: "SHOW",
+  },
 });
 </script>
 <style scoped>
