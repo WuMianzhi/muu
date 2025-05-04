@@ -4,6 +4,8 @@ import BaseColorProgressBar from "./components/base/BaseColorProgressBar.vue";
 import PageButton from "./components/base/PageButton.vue";
 import { routes } from "./router";
 import { useRoute, useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
 
 const isWelcome = ref(true);
 const pageIdx = ref(0);
@@ -51,12 +53,19 @@ const goPrevPage = () => {
   pageIdx.value < 1 ? null : pageIdx.value--;
   router.push(routes[pageIdx.value + 1].path);
 };
+
+const toggleLocale = () => {
+  locale.value == "zh" ? (locale.value = "en") : (locale.value = "zh");
+};
 </script>
 
 <template>
   <div class="placeholder" :class="isWelcome ? '' : 'remove'"></div>
   <header :class="isWelcome ? 'bigger' : 'color-bg'">
     <img class="unicorn-img" src="./assets/unicorn.svg" />
+    <div @click="toggleLocale" class="lang-switch">
+      🌐 {{ locale === "zh" ? "English" : "中文" }}
+    </div>
   </header>
 
   <main :class="isWelcome ? '' : 'main-content'">
@@ -69,7 +78,7 @@ const goPrevPage = () => {
 
   <footer class="footer">
     <button class="start-btn" v-if="isWelcome" @click="toFirst">
-      开始测试
+      {{ $t("base.start_test") }}
     </button>
     <div class="page-control" v-else>
       <PageButton @click="goPrevPage">
@@ -235,5 +244,23 @@ footer {
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
   transform: scale(0.68);
+}
+
+.lang-switch {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  user-select: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+  background: #eafff980;
+  backdrop-filter: blur(1rem);
+}
+.lang-switch:hover {
+  background-color: #eee;
 }
 </style>

@@ -1,0 +1,51 @@
+{
+  "identity": {
+    "title": "Gender Identity / Sense of Gender",
+    "non_binary": "Non-binary",
+    "transgender": "Transgender",
+    "woman": "Woman / Girl",
+    "man": "Man / Boy",
+    "custom": "Custom"
+  },
+  "expression": {
+    "title": "Gender Expression / Gender Presentation",
+    "neutral": "Neutral / Undefined",
+    "feminine": "Feminine",
+    "masculine": "Masculine"
+  },
+  "assigned_sex": {
+    "title": "Sex Assigned at Birth",
+    "female": "Female",
+    "male": "Male"
+  },
+  "physical": {
+    "title": "Physical Characteristics",
+    "vagina": "Vagina",
+    "undifferentiated": "Undifferentiated",
+    "penis": "Penis",
+    "estrogen": "Estrogen",
+    "testosterone": "Testosterone",
+    "progesterone": "Progesterone",
+    "chromosomes": "Sex Chromosomes"
+  },
+  "identity_type": {
+    "trans_male": "Transgender Male",
+    "trans_female": "Transgender Female",
+    "cis_female": "Cisgender Female",
+    "cis_male": "Cisgender Male"
+  },
+  "attraction": {
+    "attracted": "Attraction",
+    "not_attracted": "Not Attracted"
+  },
+  "attraction_title": {
+    "physical_attraction": "Who you are physically attracted to",
+    "sexual_identity": "Sexual orientation / identity",
+    "romantic_attraction": "Who you are romantically attracted to"
+  },
+  "base": {
+    "main_title": "The Flying Gender Unicorn",
+    "save_pic": "Save Result",
+    "start_test": "Start Test"
+  }
+}

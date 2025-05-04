@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div ref="captureTarget" class="capture-target">
-      <h1>~飞起来的性别独角兽~</h1>
+      <h1>~ {{ $t("base.main_title") }} ~</h1>
       <div class="row1">
         <div>
           <img class="unicorn-img" src="../assets/unicorn.svg" />
@@ -17,7 +17,9 @@
       </div>
     </div>
 
-    <button @click="saveAsImage" class="save-btn">保存图片</button>
+    <button @click="saveAsImage" class="save-btn">
+      {{ $t("base.save_pic") }}
+    </button>
   </div>
 </template>
 
@@ -57,7 +59,7 @@ const saveAsImage = async () => {
   position: absolute; /* 移出正常文档流 */
   left: -9999px; /* 放到屏幕外 */
   top: 0;
-  display: inline-block;  
+  display: inline-block;
   padding: 2rem;
   margin: 2rem;
 }
@@ -74,8 +76,8 @@ const saveAsImage = async () => {
 }
 
 .save-btn {
-  padding: .5rem 2rem;
-  font-size:1.35rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.35rem;
   font-weight: bolder;
   box-sizing: border-box;
   border: 4px solid rgba(254, 254, 254, 0.353);
@@ -114,5 +116,4 @@ const saveAsImage = async () => {
     /* Return to the left edge */
   }
 }
-
 </style>

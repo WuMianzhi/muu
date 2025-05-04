@@ -1,12 +1,12 @@
 <template>
   <div class="quiz-container">
-    <h1>生理特征</h1>
+    <h1>{{ $t("physical.title") }}</h1>
 
     <div class="vig">
       <div class="title-container">
-        <h3>阴道</h3>
-        <h3>未分化</h3>
-        <h3>阴茎</h3>
+        <h3>{{ $t("physical.vagina") }}</h3>
+        <h3>{{ $t("physical.undifferentiated") }}</h3>
+        <h3>{{ $t("physical.penis") }}</h3>
       </div>
       <ColorBar v-model:val="quizStore.genderQuiz.physicalTrailPercent" />
       <div class="phy-img-container">
@@ -25,14 +25,14 @@
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"
           v-model:val="quiz.val"
-          :title="quiz.name"
+          :title="$t(quiz.name)"
           :img="quiz.img"
         />
       </template>
     </div>
 
     <div class="chromosome-container">
-      <h3>性染色体</h3>
+      <h3>{{ $t("physical.chromosomes") }}</h3>
       <div class="chromosome-panel" v-if="mode === 'SHOW'">
         <span>X</span>
         <AxisControl v-model:idx="firstIdx" />

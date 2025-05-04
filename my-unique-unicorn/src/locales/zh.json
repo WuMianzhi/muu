@@ -1,0 +1,51 @@
+{
+  "identity": {
+    "title": "性别认同/性别身份",
+    "non_binary": "非二元性别",
+    "transgender": "跨性别",
+    "woman": "女人/女孩",
+    "man": "男人/男孩",
+    "custom": "自定义"
+  },
+  "expression": {
+    "title": "性别表达/性别气质",
+    "neutral": "中性的/不被定义的",
+    "feminine": "阴柔的/女性化的",
+    "masculine": "阳刚的/男性化的"
+  },
+  "assigned_sex": {
+    "title": "出生时分配性别",
+    "female": "女性",
+    "male": "男性"
+  },
+  "physical": {
+    "title": "生理特征",
+    "vagina": "阴道",
+    "undifferentiated": "未分化",
+    "penis": "阴茎",
+    "estrogen": "雌激素",
+    "testosterone": "雄激素/睾酮",
+    "progesterone": "孕激素",
+    "chromosomes": "性染色体"
+  },
+  "identity_type": {
+    "trans_male": "跨性别男性",
+    "trans_female": "跨性别女性",
+    "cis_female": "顺性别女性",
+    "cis_male": "顺性别男性"
+  },
+  "attraction": {
+    "attracted": "被吸引",
+    "not_attracted": "不被吸引"
+  },
+  "attraction_title": {
+    "physical_attraction": "生理上被怎样的人吸引",
+    "sexual_identity": "性/情欲倾向的认同/身份",
+    "romantic_attraction": "亲密关系上受到怎样的人吸引"
+  },
+  "base": {
+    "main_title": "飞起来的性别独角兽",
+    "save_pic": "保存结果",
+    "start_test": "开始测试"
+  }
+}

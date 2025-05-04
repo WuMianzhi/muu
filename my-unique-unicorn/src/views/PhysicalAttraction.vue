@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>生理上被怎样的人吸引</h1>
+    <h1>{{ $t('attraction_title.physical_attraction') }}</h1>
 
     <div>
       <div class="switcher-container">
@@ -8,7 +8,7 @@
       </div>
       <template v-for="(quiz, idx) in quizStore.genderQuiz.physicalAttract">
         <NumPicker
-          :title="quiz.name"
+          :title="$t(quiz.name)"
           v-model:val="quiz.val"
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"

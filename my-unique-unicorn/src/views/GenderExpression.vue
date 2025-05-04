@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>性别表达/性别气质</h1>
+    <h1>{{ $t("expression.title") }}</h1>
 
     <div>
       <template v-for="(quiz, idx) in quizStore.genderQuiz.genderExpression">
         <NumPicker
-          :title="quiz.name"
+          :title="$t(quiz.name)"
           v-model:val="quiz.val"
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"
@@ -14,7 +14,7 @@
       </template>
     </div>
 
-    <h1>出生时分配性别</h1>
+    <h1>{{ $t("assigned_sex.title") }}</h1>
     <div class="assign-gender">
       <div class="left">
         <BaseFlowerButton
@@ -24,13 +24,13 @@
               !quizStore.genderQuiz.assignGenderMale
           "
         />
-        <h3>女性</h3>
+        <h3>{{$t('assigned_sex.female')}}</h3>
       </div>
       <div class="right">
         <BaseFlowerButton
           v-model:active="quizStore.genderQuiz.assignGenderMale"
         />
-        <h3>男性</h3>
+        <h3>{{$t('assigned_sex.male')}}</h3>
       </div>
     </div>
   </div>

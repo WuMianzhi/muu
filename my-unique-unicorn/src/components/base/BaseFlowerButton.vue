@@ -5,7 +5,6 @@
         :class="{ active: active }"
         @click="handleClick"></div>
     </div>
-
 </template>
 
 <script setup>

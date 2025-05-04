@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>性/情欲倾向的认同/身份</h1>
+    <h1>{{ $t("attraction_title.sexual_identity") }}</h1>
     <div>
       <template v-for="(quiz, idx) in quizStore.genderQuiz.sexualOrientation">
         <NumPicker
-          :title="quiz.name"
+          :title="$t(quiz.name)"
           v-model:val="quiz.val"
           :start-color="quiz.startColor"
           :end-color="quiz.endColor"

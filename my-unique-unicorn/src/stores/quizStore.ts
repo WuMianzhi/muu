@@ -6,31 +6,31 @@ export const useQuizStore = defineStore("quiz", {
     genderQuiz: {
       genderIdentity: [
         {
-          name: "非二元性别",
+          name: "identity.non_binary",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
         },
         {
-          name: "跨性别",
+          name: "identity.transgender",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
         },
         {
-          name: "女人/女孩",
+          name: "identity.woman",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
         },
         {
-          name: "男人/男孩",
+          name: "identity.man",
           val: 10,
           startColor: [184, 233, 162],
           endColor: [138, 233, 239],
         },
         {
-          name: "（自定义！）",
+          name: "identity.custom",
           val: 10,
           startColor: [124, 212, 218],
           endColor: [138, 137, 238],
@@ -38,19 +38,19 @@ export const useQuizStore = defineStore("quiz", {
       ],
       genderExpression: [
         {
-          name: "中性的不被定义的",
+          name: "expression.neutral",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
         },
         {
-          name: "阴柔的/女性化的",
+          name: "expression.feminine",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
         },
         {
-          name: "阳刚的/男性化的",
+          name: "expression.masculine",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
@@ -59,31 +59,31 @@ export const useQuizStore = defineStore("quiz", {
       assignGenderMale: true,
       sexualOrientation: [
         {
-          name: "非二元性别",
+          name: "identity.non_binary",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
         },
         {
-          name: "跨性别",
+          name: "identity.transgender",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
         },
         {
-          name: "女人/女孩",
+          name: "identity.woman",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
         },
         {
-          name: "男人/男孩",
+          name: "identity.man",
           val: 10,
           startColor: [191, 243, 169],
           endColor: [138, 233, 240],
         },
         {
-          name: "（自定义！）",
+          name: "identity.custom",
           val: 10,
           startColor: [133, 228, 236],
           endColor: [137, 135, 233],
@@ -91,31 +91,31 @@ export const useQuizStore = defineStore("quiz", {
       ],
       physicalAttract: [
         {
-          name: "非二元性别",
+          name: "identity.non_binary",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
         },
         {
-          name: "跨性别男性",
+          name: "identity_type.trans_male",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
         },
         {
-          name: "跨性别女性",
+          name: "identity_type.trans_female",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
         },
         {
-          name: "顺性别女性",
+          name: "identity_type.cis_female",
           val: 10,
           startColor: [184, 233, 162],
           endColor: [138, 233, 239],
         },
         {
-          name: "顺性别男性",
+          name: "identity_type.cis_male",
           val: 10,
           startColor: [124, 212, 218],
           endColor: [138, 137, 238],
@@ -124,31 +124,31 @@ export const useQuizStore = defineStore("quiz", {
       isPhysicalAttract: true,
       intimateAttract: [
         {
-          name: "非二元性别",
+          name: "identity.non_binary",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
         },
         {
-          name: "跨性别男性",
+          name: "identity_type.trans_male",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
         },
         {
-          name: "跨性别女性",
+          name: "identity_type.trans_female",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
         },
         {
-          name: "顺性别女性",
+          name: "identity_type.cis_female",
           val: 10,
           startColor: [184, 233, 162],
           endColor: [138, 233, 239],
         },
         {
-          name: "顺性别男性",
+          name: "identity_type.cis_male",
           val: 10,
           startColor: [124, 212, 218],
           endColor: [138, 137, 238],
@@ -157,21 +157,21 @@ export const useQuizStore = defineStore("quiz", {
       isIntimateAttract: true,
       physicalTrail: [
         {
-          name: "雌激素",
+          name: "physical.estrogen",
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
           img: "../../assets/img/androgens.svg",
         },
         {
-          name: "雄激素/睾酮",
+          name: "physical.testosterone",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
           img: "../../assets/img/androgens.svg",
         },
         {
-          name: "孕激素",
+          name: "physical.progesterone",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
