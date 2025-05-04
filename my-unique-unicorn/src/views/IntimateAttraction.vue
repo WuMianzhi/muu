@@ -4,7 +4,7 @@
 
     <div>
       <div class="switcher-container">
-        <BaseSwitch v-model:checked="quizStore.genderQuiz.isIntimateAttract" />
+        <BaseSwitch v-model:checked="quizStore.genderQuiz.isIntimateAttract" :mode="mode"/>
       </div>
 
       <template v-for="(quiz, idx) in quizStore.genderQuiz.intimateAttract">

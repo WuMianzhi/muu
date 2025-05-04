@@ -7,7 +7,9 @@
         <div class="center">
             <BaseProgressPills :active-index="val"
             @update:active-index="newVal => emits('update:val', newVal)"
-             :end-color="endColor" :start-color="startColor" />
+             :end-color="endColor" :start-color="startColor" 
+             :mode="mode"
+             />
             <slot>
                 <h3> {{ title }}</h3>
             </slot>

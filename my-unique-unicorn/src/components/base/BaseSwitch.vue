@@ -1,6 +1,10 @@
 <template>
-  <div class="switch-container" @click="toggle">
-    <div class="switch-label" :class="{ active: !checked }">
+  <div
+    class="switch-container"
+    :class="{ 'show-mode': mode == 'SHOW' }"
+    @click="toggle"
+  >
+    <div class="switch-label" :class="[{ active: !checked }]">
       {{
         checked ? $t("attraction.attracted") : $t("attraction.not_attracted")
       }}
@@ -12,6 +16,7 @@
 <script setup lang="ts">
 const props = defineProps({
   checked: { type: Boolean, default: false },
+  mode: { type: String, default: "SHOW" },
 });
 
 const emit = defineEmits(["update:checked"]);
@@ -31,10 +36,13 @@ function toggle() {
   padding: 6px;
   border-radius: 30px;
   background: #f1f3f5;
-  box-shadow: inset 2px 2px 6px #d1d9e6, inset -2px -2px 6px #ffffff;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+.show-mode {
+  box-shadow: inset 2px 2px 6px #d1d9e6, inset -2px -2px 6px #ffffff;
 }
 
 .switch-container.active {

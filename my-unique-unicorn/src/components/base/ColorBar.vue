@@ -8,17 +8,22 @@
       :max="max"
       step="1"
     />
+    <div
+      class="more-colorful"
+      :style="{ width: (100 * (max - val)) / max + '%' }"
+    ></div>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   val: { type: Number, default: 50 },
   min: { type: Number, default: 0 },
   max: { type: Number, default: 100 },
   minLabel: { type: String, default: "Min" },
   midLabel: { type: String, default: "Mid" },
   maxLabel: { type: String, default: "Max" },
+  mode: { type: String, default: "SHOW" },
 });
 const emit = defineEmits(["update:val"]);
 
@@ -28,25 +33,49 @@ function onInput(event) {
 </script>
 
 <style lang="css" scoped>
+.slider-wrapper {
+  position: relative;
+}
+
+input {
+  color: transparent;
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
-  height: 16px;
+  height: 1rem;
   border-radius: 12px;
   background: linear-gradient(
     to right,
-    #fbab99,
-    #f6e49c,
-    #b0f6b5,
-    #b5d8f6,
-    #d2b5f6
+    hsl(11, 100%, 65%),
+    hsl(48, 100%, 70%),
+    hsl(124, 100%, 68%),
+    hsl(208, 100%, 67%),
+    hsl(267, 100%, 68%)
   );
   outline: none;
   border: rgba(255, 255, 255, 0.6) 1px solid;
   box-shadow: 0px 0px 4px #d1d9e6;
 }
 
+.more-colorful {
+  width: 100%;
+  z-index: 100;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(1rem + 2px);
+  border-radius: calc(0.5rem + 1px);
+  background: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  /* box-sizing: content-box; */
+  /* backdrop-filter: blur(1rem); */
+}
+
 input[type="range"]::-webkit-slider-thumb {
+  z-index: 999;
   -webkit-appearance: none;
   width: 16px;
   height: 16px;
