@@ -9,6 +9,10 @@ const isWelcome = ref(true);
 const pageIdx = ref(0);
 const router = useRouter();
 
+const toFirst = () => {
+  router.push("/gender-identity");
+};
+
 onMounted(() => {
   const route = useRoute();
 
@@ -64,7 +68,7 @@ const goPrevPage = () => {
   </main>
 
   <footer class="footer">
-    <button class="start-btn" v-if="isWelcome" @click="isWelcome = !isWelcome">
+    <button class="start-btn" v-if="isWelcome" @click="toFirst">
       开始测试
     </button>
     <div class="page-control" v-else>
@@ -120,8 +124,6 @@ footer {
       rgba(255, 255, 255, 0.4) 55.88%,
       rgba(255, 255, 255, 0) 99.64%
     ); */
-
-
 }
 
 .logo {
