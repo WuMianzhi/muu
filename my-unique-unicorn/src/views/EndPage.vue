@@ -57,7 +57,7 @@ const saveAsImage = async () => {
   position: absolute; /* 移出正常文档流 */
   left: -9999px; /* 放到屏幕外 */
   top: 0;
-  display: inline-block;
+  display: inline-block;  
   padding: 2rem;
   margin: 2rem;
 }
