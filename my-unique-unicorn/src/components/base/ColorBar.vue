@@ -48,11 +48,11 @@ input[type="range"] {
   border-radius: 12px;
   background: linear-gradient(
     to right,
-    hsl(11, 100%, 65%),
-    hsl(48, 100%, 70%),
-    hsl(124, 100%, 68%),
-    hsl(208, 100%, 67%),
-    hsl(267, 100%, 68%)
+    rgb(255, 109, 77),
+    rgb(255, 224, 102),
+    rgb(92, 255, 103),
+    rgb(87, 176, 255),
+    rgb(165, 92, 255)    
   );
   outline: none;
   border: rgba(255, 255, 255, 0.6) 1px solid;

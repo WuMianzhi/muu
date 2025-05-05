@@ -82,11 +82,11 @@ const toggleLocale = () => {
     </button>
     <div class="page-control" v-else>
       <PageButton @click="goPrevPage">
-        <img class="btn-inner-img reverse" src="./assets/right_arrow.svg" />
+        <img class="btn-inner-img" src="./assets/icons/left.png" />
       </PageButton>
       <BaseColorProgressBar v-model:selected-index="pageIdx" />
       <PageButton @click="goNextPage">
-        <img class="btn-inner-img" src="./assets/right_arrow.svg" />
+        <img class="btn-inner-img" src="./assets/icons/right.png" />
       </PageButton>
     </div>
   </footer>
@@ -213,8 +213,9 @@ footer {
 }
 
 .btn-inner-img {
-  width: 1rem;
-  height: 1rem;
+  width: .5rem;
+  height: auto;
+  
 }
 
 .placeholder {

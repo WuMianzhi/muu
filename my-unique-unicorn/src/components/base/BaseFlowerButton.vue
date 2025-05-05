@@ -35,8 +35,8 @@ function handleClick() {
     height: 64px;
     background: radial-gradient(circle at center, rgba(46, 51, 60, 0.3), rgba(180, 200, 255, 0.1));
     filter: blur(8px);
-    mask-image: url('../../assets/ic_flower.svg');
-    -webkit-mask-image: url('../../assets/ic_flower.svg');
+    mask-image: url('../../assets/icons/star.svg');
+    -webkit-mask-image: url('../../assets/icons/star.svg');
     -webkit-mask-size: cover;
     mask-size: cover;
     transition: cubic-bezier(0.075, -0.2, 0.165, 1) all .36s;

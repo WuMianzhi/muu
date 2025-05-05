@@ -15,7 +15,11 @@ const props = defineProps({
   width: 30px;
   height: 30px;
   background: #f0f0f383;
-  background: radial-gradient(#dee4ea, #dee4ea69);
+  background: radial-gradient(
+    64.29% 64.29% at 50% 50%,
+    #e0e6ec 0%,
+    rgba(224, 230, 236, 0) 100%
+  );
   border-radius: 50%;
   border: none;
   padding: 0;
