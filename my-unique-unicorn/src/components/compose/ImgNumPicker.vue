@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <img src="../../assets/img/androgens.svg" alt="androgen" />
+      <img :src="img" :alt="title" />
     </div>
     <div class="selector">
       <BaseProgressPills

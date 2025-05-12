@@ -12,7 +12,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     vueI18n({
-      include: path.resolve(__dirname, './src/locales/**')
+      include: path.resolve(__dirname, './src/locales')
     })
   ],
   resolve: {

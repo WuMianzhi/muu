@@ -1,5 +1,8 @@
 // stores/quizStore.ts
 import { defineStore } from "pinia";
+import estrogenImgUrl from "@/assets/img/estrogen.svg"
+import androgensImgUrl from "@/assets/img/androgens.svg"
+import progesteroneImgUrl from "@/assets/img/progesterone.svg"
 
 export const useQuizStore = defineStore("quiz", {
   state: () => ({
@@ -161,21 +164,21 @@ export const useQuizStore = defineStore("quiz", {
           val: 10,
           startColor: [235, 135, 134],
           endColor: [239, 198, 157],
-          img: "../../assets/img/androgens.svg",
+          img: estrogenImgUrl,
         },
         {
           name: "physical.testosterone",
           val: 10,
           startColor: [243, 206, 160],
           endColor: [241, 235, 138],
-          img: "../../assets/img/androgens.svg",
+          img: androgensImgUrl,
         },
         {
           name: "physical.progesterone",
           val: 10,
           startColor: [243, 240, 136],
           endColor: [195, 241, 166],
-          img: "../../assets/img/androgens.svg",
+          img: progesteroneImgUrl,
         },
       ],
       physicalTrailPercent: 50,

@@ -10,12 +10,12 @@
       </div>
       <ColorBar v-model:val="quizStore.genderQuiz.physicalTrailPercent" />
       <div class="phy-img-container">
-        <img src="../assets/img/gender_part_1_six.png" alt="" />
-        <img src="../assets/img/gender_part_2_six.png" alt="" />
-        <img src="../assets/img/gender_part_3_six.png" alt="" />
-        <img src="../assets/img/gender_part_4_six.png" alt="" />
-        <img src="../assets/img/gender_part_5_six.png" alt="" />
-        <img src="../assets/img/gender_part_6_six.png" alt="" />
+        <img src="../assets/img/gender_part_1_six.png" alt="0" />
+        <img src="../assets/img/gender_part_2_six.png" alt="1" />
+        <img src="../assets/img/gender_part_3_six.png" alt="2" />
+        <img src="../assets/img/gender_part_4_six.png" alt="3" />
+        <img src="../assets/img/gender_part_5_six.png" alt="4" />
+        <img src="../assets/img/gender_part_6_six.png" alt="5" />
       </div>
     </div>
 
