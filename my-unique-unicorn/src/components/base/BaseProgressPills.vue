@@ -11,10 +11,20 @@
       :style="{ background: getColor(index) }"
       @click="updateIdx(index)"
     />
+
+    <!-- 隐藏但可交互的 input -->
+    <input
+      class="progress-slider"
+      type="range"
+      min="0"
+      :max="total - 1"
+      v-model="sliderValue"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref, watch } from 'vue';
 const props = defineProps({
   startColor: { type: Array, default: [173, 255, 47] },
   endColor: { type: Array, default: [0, 191, 255] },
@@ -22,7 +32,7 @@ const props = defineProps({
   activeIndex: { type: Number, default: 0 }, // Which pill is active
   mode: { type: String, default: "SHOW" },
 });
-
+const sliderValue = ref(props.activeIndex);
 const emits = defineEmits(["update:activeIndex"]);
 const updateIdx = (idx) => {
   emits("update:activeIndex", idx);
@@ -42,10 +52,22 @@ function getColor(index) {
 
   return `rgb(${r}, ${g}, ${b})`;
 }
+
+watch(
+  () => props.activeIndex,
+  (val) => {
+    sliderValue.value = val;
+  }
+);
+
+watch(sliderValue, (val) => {
+  emits("update:activeIndex", Number(val));
+});
 </script>
 
 <style scoped>
 .progress-container {
+  position: relative;
   display: flex;
   gap: 3px;
   justify-content: center;
@@ -74,5 +96,15 @@ function getColor(index) {
 
 .pill.active {
   transform: translateY(-12px);
+}
+
+.progress-slider {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  touch-action: pan-x;
 }
 </style>
