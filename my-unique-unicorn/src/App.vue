@@ -100,13 +100,13 @@ const transitionName = ref("fade-next");
 <style scoped>
 header {
   height: 15vh;
-  flex: 1 1 100px;
+  flex: 1 ;
   display: flex;
   justify-content: center;
 }
 
 main {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   overflow: auto;
   height: fit-content;
   /* height: max-content; */

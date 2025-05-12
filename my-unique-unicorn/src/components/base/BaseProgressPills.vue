@@ -69,9 +69,9 @@ watch(sliderValue, (val) => {
 .progress-container {
   position: relative;
   display: flex;
-  gap: 3px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: end;
+  width: 100%;
 }
 
 .pill {

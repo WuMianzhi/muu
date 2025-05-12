@@ -13,8 +13,8 @@
             <slot>
                 <h3> {{ title }}</h3>
             </slot>
-        
         </div>
+
         <BaseButton @click="addAcKey" v-if="mode==='SHOW'">
             <img src="../../assets/plus.svg" class="btn-symbol"></img>
         </BaseButton>
@@ -52,14 +52,17 @@ const minAcKey = () => {
 .wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: .5rem;
+    /* justify-content: space-between; */
+    /* flex: 1; */
+    gap: 1rem;
     margin: 1rem 0;
+    align-items: center; 
 }
 
 .center {
+    flex: 1;
     /* text-align: center; */
-    transform: translateY(.25rem);
+    transform: translateY(.75rem);
 }
 
 .btn-symbol {

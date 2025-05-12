@@ -34,9 +34,11 @@ const emits = defineEmits(["update:val"]);
   display: flex;
   justify-content: space-between;
   align-items: end;
+  gap: 1rem;
 }
 
 .selector {
+  flex: 1;
   text-align: left;
 }
 </style>
