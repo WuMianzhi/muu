@@ -11,10 +11,6 @@ const isWelcome = ref(true);
 const pageIdx = ref(0);
 const router = useRouter();
 
-const toFirst = () => {
-  router.push("/gender-identity");
-};
-
 onMounted(() => {
   const route = useRoute();
 
@@ -44,12 +40,19 @@ const findRouteIdx = (route) => {
   }
 };
 
+const toFirst = () => {
+  transitionName.value = "fade-next";
+  router.push("/gender-identity");
+};
+
 const goNextPage = () => {
+  transitionName.value = "fade-next";
   pageIdx.value < routes.length - 2 ? pageIdx.value++ : null;
   router.push(routes[pageIdx.value + 1].path);
 };
 
 const goPrevPage = () => {
+  transitionName.value = "fade-prev";
   pageIdx.value < 1 ? null : pageIdx.value--;
   router.push(routes[pageIdx.value + 1].path);
 };
@@ -57,6 +60,8 @@ const goPrevPage = () => {
 const toggleLocale = () => {
   locale.value == "zh" ? (locale.value = "en") : (locale.value = "zh");
 };
+
+const transitionName = ref("fade-next");
 </script>
 
 <template>
@@ -70,7 +75,7 @@ const toggleLocale = () => {
 
   <main :class="isWelcome ? '' : 'main-content'">
     <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
+      <transition :name="transitionName" mode="out-in">
         <component :is="Component" />
       </transition>
     </router-view>
@@ -213,9 +218,8 @@ footer {
 }
 
 .btn-inner-img {
-  width: .5rem;
+  width: 0.5rem;
   height: auto;
-  
 }
 
 .placeholder {
@@ -263,5 +267,33 @@ footer {
 }
 .lang-switch:hover {
   background-color: #eee;
+}
+
+/* 动画：前进 */
+.fade-next-enter-active,
+.fade-next-leave-active {
+  transition: all 0.36s ease-in-out;
+}
+.fade-next-enter-from {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-next-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* 动画：后退 */
+.fade-prev-enter-active,
+.fade-prev-leave-active {
+  transition: all 0.36s ease-in-out;
+}
+.fade-prev-enter-from {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fade-prev-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
 }
 </style>
