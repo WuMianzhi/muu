@@ -1,3 +1,36 @@
+<template>
+  <div class="placeholder" :class="isWelcome ? '' : 'remove'"></div>
+  <header :class="isWelcome ? 'bigger' : 'color-bg'">
+    <img class="unicorn-img" src="./assets/unicorn.svg" />
+    <div @click="toggleLocale" class="lang-switch">
+      🌐 {{ locale === "zh" ? "English" : "中文" }}
+    </div>
+  </header>
+
+  <main :class="isWelcome ? '' : 'main-content'">
+    <router-view v-slot="{ Component }">
+      <transition :name="transitionName" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </main>
+
+  <footer class="footer">
+    <button class="start-btn" v-if="isWelcome" @click="toFirst">
+      {{ $t("base.start_test") }}
+    </button>
+    <div class="page-control" v-else>
+      <PageButton @click="goPrevPage">
+        <img class="btn-inner-img" src="./assets/icons/left.png" />
+      </PageButton>
+      <BaseColorProgressBar v-model:selected-index="pageIdx" />
+      <PageButton @click="goNextPage">
+        <img class="btn-inner-img" src="./assets/icons/right.png" />
+      </PageButton>
+    </div>
+  </footer>
+</template>
+
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 import BaseColorProgressBar from "./components/base/BaseColorProgressBar.vue";
@@ -64,43 +97,10 @@ const toggleLocale = () => {
 const transitionName = ref("fade-next");
 </script>
 
-<template>
-  <div class="placeholder" :class="isWelcome ? '' : 'remove'"></div>
-  <header :class="isWelcome ? 'bigger' : 'color-bg'">
-    <img class="unicorn-img" src="./assets/unicorn.svg" />
-    <div @click="toggleLocale" class="lang-switch">
-      🌐 {{ locale === "zh" ? "English" : "中文" }}
-    </div>
-  </header>
-
-  <main :class="isWelcome ? '' : 'main-content'">
-    <router-view v-slot="{ Component }">
-      <transition :name="transitionName" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </main>
-
-  <footer class="footer">
-    <button class="start-btn" v-if="isWelcome" @click="toFirst">
-      {{ $t("base.start_test") }}
-    </button>
-    <div class="page-control" v-else>
-      <PageButton @click="goPrevPage">
-        <img class="btn-inner-img" src="./assets/icons/left.png" />
-      </PageButton>
-      <BaseColorProgressBar v-model:selected-index="pageIdx" />
-      <PageButton @click="goNextPage">
-        <img class="btn-inner-img" src="./assets/icons/right.png" />
-      </PageButton>
-    </div>
-  </footer>
-</template>
-
 <style scoped>
 header {
   height: 15vh;
-  flex: 1 ;
+  flex: 1;
   display: flex;
   justify-content: center;
 }
@@ -161,11 +161,13 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 }
 
 .unicorn-img {
-  height: 100%;
-  /* width: 100%; */
+  /* height: 100%; */
+  width: 100%;
+  object-fit: scale-down
 }
 
 .page-control {
