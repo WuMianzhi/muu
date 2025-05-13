@@ -78,6 +78,7 @@ watch(sliderValue, (val) => {
   box-sizing: content-box;
   width: 6px;
   height: 16px;
+  margin: 0 1px;
   border-radius: 10px;
   background: #eee;
   transition: all 0.3s ease;

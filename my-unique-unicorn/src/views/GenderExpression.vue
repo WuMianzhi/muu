@@ -14,8 +14,8 @@
       </template>
     </div>
 
-    <h1>{{ $t("assigned_sex.title") }}</h1>
-    <div class="assign-gender">
+    <h1 v-if="mode == 'SHOW'">{{ $t("assigned_sex.title") }}</h1>
+    <div class="assign-gender" v-if="mode == 'SHOW'">
       <div class="left">
         <BaseFlowerButton
           :active="!quizStore.genderQuiz.assignGenderMale"
@@ -24,14 +24,27 @@
               !quizStore.genderQuiz.assignGenderMale
           "
         />
-        <h3>{{$t('assigned_sex.female')}}</h3>
+        <h3>{{ $t("assigned_sex.female") }}</h3>
       </div>
       <div class="right">
         <BaseFlowerButton
           v-model:active="quizStore.genderQuiz.assignGenderMale"
         />
-        <h3>{{$t('assigned_sex.male')}}</h3>
+        <h3>{{ $t("assigned_sex.male") }}</h3>
       </div>
+    </div>
+
+    <div v-else style="margin: 2rem;">
+      <h3>
+        {{ $t("assigned_sex.title") }}:
+        {{
+          $t(
+            quizStore.genderQuiz.assignGenderMale
+              ? "assigned_sex.male"
+              : "assigned_sex.female"
+          )
+        }}
+      </h3>
     </div>
   </div>
 </template>

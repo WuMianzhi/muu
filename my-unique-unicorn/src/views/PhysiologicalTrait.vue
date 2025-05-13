@@ -27,6 +27,7 @@
           v-model:val="quiz.val"
           :title="$t(quiz.name)"
           :img="quiz.img"
+          :mode="mode"
         />
       </template>
     </div>

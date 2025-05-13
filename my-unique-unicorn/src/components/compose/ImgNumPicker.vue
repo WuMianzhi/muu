@@ -9,6 +9,7 @@
         :start-color="startColor"
         :end-color="endColor"
         :active-index="val"
+        :mode="mode"
       />
       <h3>{{ title }}</h3>
     </div>
@@ -24,6 +25,7 @@ const props = defineProps({
   title: { type: String, default: "test" },
   val: { type: Number, default: 10 },
   img: { type: String, default: "" },
+  mode: {type: String, default: 'SHOW'}
 });
 
 const emits = defineEmits(["update:val"]);
