@@ -151,7 +151,7 @@ footer {
     radial-gradient(circle at 100% 00%, #a4f59d66, transparent),
     radial-gradient(circle at 100% 100%, #e4befd69, transparent);
   background-size: 400%;
-  animation: moveBackground 16s ease infinite;
+  /* animation: moveBackground 16s ease infinite; */
   border-radius: 0.5rem;
 }
 
@@ -167,7 +167,8 @@ footer {
 .unicorn-img {
   /* height: 100%; */
   width: 100%;
-  object-fit: scale-down
+  object-fit: scale-down;
+  animation: float 3s ease-in-out infinite, breathing 3.2s ease-in-out infinite;
 }
 
 .page-control {
@@ -178,13 +179,13 @@ footer {
 }
 
 .start-btn {
-  padding: 1rem 4rem;
-  font-size: 2rem;
-  font-weight: bolder;
+  padding: 0.5rem 2rem;
   box-sizing: border-box;
-  border: 4px solid rgba(254, 254, 254, 0.353);
-  border-radius: 4rem;
-  color: #ffffff;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: white;
   background: linear-gradient(
     60deg,
     #fbab99,
@@ -196,10 +197,14 @@ footer {
   );
   background-size: 400%;
   background-position: 0% 50%;
-  /* Start at the left edge */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   animation: moveBackground 16s ease infinite;
-
-  /* Apply animation */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 @keyframes moveBackground {
@@ -297,5 +302,23 @@ footer {
 .fade-prev-leave-to {
   opacity: 0;
   transform: translateX(100%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
 }
 </style>

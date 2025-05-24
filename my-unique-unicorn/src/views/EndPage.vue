@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div ref="captureTarget" class="capture-target">
-      <h1>~ {{ $t("base.main_title") }} ~</h1>
+      <h1 class="main_title">~ {{ $t("base.main_title") }} ~</h1>
       <div class="row1">
         <div>
           <img class="unicorn-img" src="../assets/unicorn.svg" />
@@ -14,6 +14,14 @@
         <IntimateAttraction :mode="'EXPORT'" />
         <PhysicalAttraction :mode="'EXPORT'" />
         <PhysiologicalTrait :mode="'EXPORT'" />
+      </div>
+      <div class="qrcode-container">
+        <img
+          class="qrcode"
+          src="../assets/img/qrCode.png"
+          alt="unicorn.gende.rs"
+          srcset=""
+        />
       </div>
     </div>
 
@@ -55,9 +63,14 @@ const saveAsImage = async () => {
   justify-content: center;
 }
 
+.main_title {
+  font-size: 2rem;
+}
+
 .capture-target {
   position: absolute; /* 移出正常文档流 */
-  left: -9999px; /* 放到屏幕外 */
+  /* 放到屏幕外 */
+  left: -9999px;
   top: 0;
   display: inline-block;
   padding: 2rem;
@@ -77,12 +90,12 @@ const saveAsImage = async () => {
 
 .save-btn {
   padding: 0.5rem 2rem;
-  font-size: 1.35rem;
-  font-weight: bolder;
   box-sizing: border-box;
-  border: 4px solid rgba(254, 254, 254, 0.353);
-  border-radius: 4rem;
-  color: #ffffff;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: white;
   background: linear-gradient(
     60deg,
     #fbab99,
@@ -94,11 +107,27 @@ const saveAsImage = async () => {
   );
   background-size: 400%;
   background-position: 0% 50%;
-  /* Start at the left edge */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   animation: moveBackground 16s ease infinite;
-
-  /* Apply animation */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.save-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.save-btn:active {
+  transform: scale(0.98);
+}
+/* Apply animation */
 
 @keyframes moveBackground {
   0% {
@@ -115,5 +144,19 @@ const saveAsImage = async () => {
     background-position: 0% 0%;
     /* Return to the left edge */
   }
+}
+
+.qrcode-container {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.qrcode {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 </style>
