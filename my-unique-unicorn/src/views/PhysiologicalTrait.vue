@@ -34,10 +34,16 @@
 
     <div class="chromosome-container">
       <h3>{{ $t("physical.chromosomes") }}</h3>
-      <div class="chromosome-panel" v-if="mode === 'SHOW'">
-        <span>X</span>
+      <!-- <div class="chromosome-panel" v-if="mode === 'SHOW'"> -->
+      <div v-if="mode === 'SHOW'" class="flex-1">
+        <ColorfulSelect
+          v-model="chromosome"
+          :options="chromosomeOpts"
+          placeholder="请选择"
+        />
+        <!-- <span>X</span>
         <AxisControl v-model:idx="firstIdx" />
-        <AxisControl v-model:idx="secondIdx" />
+        <AxisControl v-model:idx="secondIdx" /> -->
       </div>
       <h3 v-else>{{ res }}</h3>
     </div>
@@ -46,20 +52,32 @@
 <script lang="ts" setup>
 import ColorBar from "@/components/base/ColorBar.vue";
 import ImgNumPicker from "@/components/compose/ImgNumPicker.vue";
-import AxisControl from "@/components/base/AxisControlPad.vue";
 import { useQuizStore } from "@/stores/quizStore";
 import { computed, ref, watch } from "vue";
+import ColorfulSelect from "@/components/base/ColorfulSelect.vue";
 
 const quizStore = useQuizStore();
 
 const firstIdx = ref(0);
 const secondIdx = ref(2);
+const chromosomeOpts = ref([
+  { label: "XX", value: "XX" },
+  { label: "XXX", value: "XXX" },
+  { label: "XXY", value: "XXY" },
+  { label: "XYY", value: "XYY" },
+  { label: "XY", value: "XY" },
+]);
+const chromosome = ref<string>("");
 
 const res = computed(() => {
   const chromosomeArray = ["X", "Y", "-"];
   return `X${chromosomeArray[firstIdx.value]}${
     secondIdx.value == 2 ? "" : chromosomeArray[secondIdx.value]
   }`;
+});
+
+watch(chromosome, () => {
+  quizStore.genderQuiz.chromosome = chromosome.value;
 });
 
 watch([firstIdx, secondIdx], () => {
@@ -99,8 +117,10 @@ img {
 }
 
 .chromosome-container {
+  width: 100%;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .chromosome-panel {
@@ -143,5 +163,9 @@ span {
   );
   box-shadow: -9px -9px 16px 0px rgba(255, 255, 255, 0.6),
     9px 9px 16px 0px rgba(194, 211, 237, 0.6);
+}
+
+.flex-1 {
+  flex: 1;
 }
 </style>
