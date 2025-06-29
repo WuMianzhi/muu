@@ -68,8 +68,8 @@ function scrollDown() {
 }
 
 .item {
-  height: 36px;
-  line-height: 36px;
+  height: 2rem;
+  line-height: 2rem;
   width: 2rem;
   text-align: center;
   font-size: 18px;

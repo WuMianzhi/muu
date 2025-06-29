@@ -31,10 +31,10 @@ function toggle() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80px;
-  height: 30px;
-  padding: 6px;
-  border-radius: 30px;
+  width: 6rem;
+  height: 2rem;
+  padding: .5rem;
+  border-radius: 3rem;
   background: #f1f3f5;
   cursor: pointer;
   position: relative;
@@ -74,10 +74,10 @@ function toggle() {
 
 .switch-knob {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 18px;
-  height: 18px;
+  top: .5rem;
+  left: .5rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background: #ffffff;
   background: radial-gradient(#ffffff, #ffffff00);
@@ -88,6 +88,6 @@ function toggle() {
 }
 
 .switch-knob.active {
-  transform: translateX(48px);
+  transform: translateX(3.5rem);
 }
 </style>

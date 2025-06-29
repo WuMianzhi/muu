@@ -36,7 +36,7 @@ function selectColor(index) {
 <style scoped>
 .color-options {
   display: flex;
-  gap: 12px;
+  gap: .75rem;
 }
 
 .color-circle {

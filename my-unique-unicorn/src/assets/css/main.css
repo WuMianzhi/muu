@@ -50,3 +50,13 @@ a,
     padding: 0 2rem;
   }
 }
+
+@media (max-width:350px) {
+  html {
+    font-size: 75%;
+  }
+
+  /* #app {
+    padding: 1rem;
+  } */
+}

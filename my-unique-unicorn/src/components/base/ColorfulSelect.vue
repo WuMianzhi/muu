@@ -54,7 +54,7 @@ const updatePosition = () => {
     dropdownStyle.value = {
       position: "absolute",
       top: showAbove
-        ? `${rect.top + window.scrollY - 200}px`
+        ? `calc(${rect.top + window.scrollY}px - 14rem)`
         : `${rect.bottom + window.scrollY}px`,
       left: `${rect.left + window.scrollX}px`,
       width: `${rect.width}px`,
@@ -102,7 +102,7 @@ onBeforeUnmount(() =>
 .custom-select {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 20rem;
   user-select: none;
   font-family: sans-serif;
 }
@@ -114,7 +114,8 @@ onBeforeUnmount(() =>
   border-radius: 2rem;
   background-color: #fff;
   cursor: pointer;
-  box-shadow: -9px -9px 16px 0px #ffffff99, 9px 9px 16px 0px #bfd0e999;
+  font-size: 1rem;
+  box-shadow: -.5rem -.5rem 1rem 0px #ffffff99, .5rem .5rem 1rem 0px #bfd0e999;
   background: linear-gradient(
       180deg,
       rgba(208, 232, 255, 0.2) 0%,
@@ -130,18 +131,19 @@ onBeforeUnmount(() =>
   top: 100%;
   left: 0;
   right: 0;
-  margin-top: 4px;
+  font-size: 1rem;
+  margin-top: .25rem;
   border: 2px solid #ccc;
-  border-radius: 8px;
+  border-radius: .5rem;
   background-color: #fff;
   color: #334155;
-  max-height: 200px;
+  max-height: 14rem;
   overflow-y: auto;
   z-index: 1000;
 }
 
 .option {
-  padding: 10px;
+  padding: .5rem;
   cursor: pointer;
   transition: all 0.2s;
 }

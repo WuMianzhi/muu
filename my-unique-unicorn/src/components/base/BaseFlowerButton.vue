@@ -31,8 +31,8 @@ function handleClick() {
 }
 
 .flower {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
     background: radial-gradient(circle at center, rgba(46, 51, 60, 0.3), rgba(180, 200, 255, 0.1));
     filter: blur(8px);
     mask-image: url('../../assets/icons/star.svg');

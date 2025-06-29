@@ -76,10 +76,10 @@ watch(sliderValue, (val) => {
 
 .pill {
   box-sizing: content-box;
-  width: 6px;
-  height: 16px;
+  width: .35rem;
+  height: 1rem;
   margin: 0 1px;
-  border-radius: 10px;
+  border-radius: .5rem;
   background: #eee;
   transition: all 0.3s ease;
   border: rgba(232, 233, 235, 0.6) 1px solid;

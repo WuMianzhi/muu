@@ -67,6 +67,7 @@ input[type="range"] {
   top: 0;
   right: 0;
   height: calc(1rem + 2px);
+  height: 18px;
   border-radius: calc(0.5rem + 1px);
   background: rgba(255, 255, 255, 0.7);
   pointer-events: none;
